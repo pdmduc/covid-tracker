@@ -1,17 +1,11 @@
 import React from 'react';
-import {
-  Card,
-  CardContent,
-  Grid,
-  Typography,
-  makeStyles,
-} from '@material-ui/core';
+import { Card, CardContent, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
   wrapper: (props) => {
-    if (props.type == 'confirmed') return { borderLeft: '5px solic #c9302c' };
-    if (props.type == 'recovered') return { borderLeft: '5px solic #28a745' };
-    else return { borderLeft: '5px solic gray' };
+    if (props.type === 'confirmed') return { borderLeft: '5px solid #c9302c' };
+    if (props.type === 'recovered') return { borderLeft: '5px solid #28a745' };
+    else return { borderLeft: '5px solid gray' };
   },
   title: {
     fontSize: 18,
