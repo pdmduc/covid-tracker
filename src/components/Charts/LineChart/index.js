@@ -1,12 +1,12 @@
 import HighchartsReact from 'highcharts-react-official';
-import Highchart from 'highcharts';
+import Highcharts from 'highcharts';
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import { Button, ButtonGroup } from '@material-ui/core';
 
 const generateOptions = (data) => {
   const categories = data.map((item) => moment(item.Date).format('DD/MM/YYYY'));
-  console.log({ categories });
+  //console.log({ categories });
   return {
     chart: {
       height: 500,
@@ -99,7 +99,7 @@ export default function LineChart({ data }) {
         </Button>
       </ButtonGroup>
       <HighchartsReact
-        highcharts={Highchart}
+        highcharts={Highcharts}
         options={options}
       ></HighchartsReact>
     </div>

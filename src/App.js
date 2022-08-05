@@ -11,14 +11,14 @@ function App() {
 
   useEffect(() => {
     getCountries().then((res) => {
-      console.log({ res });
+      //console.log({ res });
       setCountries(res.data);
-
       setSelectedCountryId('au');
     });
   }, []);
 
   const handleOnChange = (e) => {
+    //console.log({ e });
     setSelectedCountryId(e.target.value);
   };
 
@@ -45,8 +45,7 @@ function App() {
         value={selectedCountryId}
       />
       <Highlight report={report} />
-      <Summary report={report} />
-      <p>a</p>
+      <Summary report={report} countryId={selectedCountryId} />
     </>
   );
 }
