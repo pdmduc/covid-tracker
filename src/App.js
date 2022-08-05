@@ -3,6 +3,7 @@ import Summary from './components/Summary';
 import Highlight from './components/Highlight';
 import { useEffect, useState } from 'react';
 import { getCountries, getReportByCountry } from './apis';
+import { sortBy } from 'lodash';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -12,7 +13,8 @@ function App() {
   useEffect(() => {
     getCountries().then((res) => {
       //console.log({ res });
-      setCountries(res.data);
+      const countries = sortBy(res.data, 'Country');
+      setCountries(countries);
       setSelectedCountryId('au');
     });
   }, []);
