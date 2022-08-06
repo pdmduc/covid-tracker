@@ -49,7 +49,7 @@ const generateOptions = (data) => {
   };
 };
 
-export default function LineChart({ data }) {
+const LineChart = ({ data }) => {
   const [options, setOptions] = useState({});
   const [reportType, setReportType] = useState('all');
 
@@ -104,4 +104,6 @@ export default function LineChart({ data }) {
       ></HighchartsReact>
     </div>
   );
-}
+};
+
+export default React.memo(LineChart);
